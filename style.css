@@ -1,0 +1,86 @@
+:root {
+    --rm-blue-deep: #001e4e;
+    --rm-blue-main: #00529F;
+    --rm-blue-light: #0073e6;
+    --rm-gold: #FEBE10;
+    --rm-gold-dark: #b38600;
+    --rm-white: #ffffff;
+    --rm-silver: #e0e0e0;
+    --gold-glow: 0 0 20px rgba(254, 190, 16, 0.4);
+    --blue-glow: 0 10px 30px rgba(0, 82, 159, 0.3);
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --transition-hq: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    --anim-float: floating 6s ease-in-out infinite;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: default; }
+html { scroll-behavior: smooth; }
+body {
+    background-color: var(--rm-blue-deep);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--rm-white);
+    overflow-x: hidden;
+    line-height: 1.6;
+    background-image:
+            radial-gradient(circle at 10% 20%, rgba(0, 82, 159, 0.4) 0%, transparent 50%),
+            radial-gradient(circle at 90% 80%, rgba(254, 190, 16, 0.15) 0%, transparent 50%),
+            url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "15";
+    position: fixed;
+    bottom: -50px;
+    right: -20px;
+    font-family: 'Cinzel', serif;
+    font-size: 30rem;
+    color: rgba(255, 255, 255, 0.03);
+    z-index: -1;
+    font-weight: 900;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg') no-repeat center;
+    background-size: 60%;
+    opacity: 0.03;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    pointer-events: none;
+}
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--rm-blue-deep); }
+::-webkit-scrollbar-thumb {
+    background: var(--rm-gold);
+    border-radius: 10px;
+    border: 3px solid var(--rm-blue-deep);
+}
+
+header#top {
+    background: linear-gradient(to bottom, rgba(0, 30, 78, 0.95), transparent);
+    padding: 40px 0;
+    animation: fadeInDown 1s ease-out;
+}
+header table { max-width: 1200px; margin: 0 auto; border-spacing: 20px; }
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    letter-spacing: 4px;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    background: linear-gradient(to right, #fff, var(--rm-gold), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    background-size: 200% auto;
+}
+header p { font-weight: 300; letter-spacing: 1px; color: var(--rm-silver); }
+header b { color: var(--rm-gold); }
+header img { filter: drop-shadow(0 0 15px rgba(254, 190, 16, 0.5)); animation: var(--anim-float); cursor: pointer; }
