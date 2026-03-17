@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Exo+2:wght@300;600;800&display=swap');
+
+:root {
+
+    --rm-dark: #020617;
+    --rm-cyan: #00f0ff;
+    --rm-gold: #ffcf00;
+    --rm-white: #ffffff;
+    --glass: rgba(15, 23, 42, 0.6);
+    --glass-border: rgba(0, 240, 255, 0.3);
+
+
+    --cyan-glow: 0 0 25px rgba(0, 240, 255, 0.5);
+    --gold-glow: 0 0 30px rgba(255, 207, 0, 0.4);
+    --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: default; }
+
+body {
+    background-color: var(--rm-dark);
+    font-family: 'Exo 2', sans-serif;
+    color: var(--rm-white);
+    overflow-x: hidden;
+
+
+    background-image:
+            linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)),
+            url('https://www.transparenttextures.com/patterns/cubes.png'),
+            url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Santiago_Bernab%C3%A9u_Stadium_-_2024.jpg/1200px-Santiago_Bernab%C3%A9u_Stadium_-_2024.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: "SOCIOS";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    font-family: 'Cinzel', serif;
+    font-size: 25vw;
+    color: rgba(255, 255, 255, 0.02);
+    z-index: -1;
+    font-weight: 900;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+
+header#top {
+    padding: 60px 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+}
+
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    background: linear-gradient(90deg, #fff, var(--rm-cyan), var(--rm-gold), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% auto;
+    animation: shineSweep 6s infinite linear;
+}
+
+header img {
+    filter: drop-shadow(var(--cyan-glow));
+    animation: levitate 5s ease-in-out infinite;
+}
+
+
+nav table {
+    background: var(--glass) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px !important;
+    padding: 10px 40px !important;
+    box-shadow: var(--cyan-glow);
+    margin-top: 20px;
+}
+
+nav a {
+    color: #cbd5e1 !important;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 20px;
+    display: block;
+    transition: var(--transition);
+    font-size: 0.8rem;
+}
+
+nav a:hover {
+    color: var(--rm-cyan) !important;
+    transform: scale(1.2) translateY(-5px);
+    text-shadow: var(--cyan-glow);
+}
+
+
+main { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+
+section {
+    background: var(--glass);
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 60px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.7);
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: var(--rm-gold);
+    margin-bottom: 30px;
+    border-left: 10px solid var(--rm-cyan);
+    padding-left: 25px;
+}
+
+fieldset {
+    border: 2px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+legend {
+    font-family: 'Cinzel', serif;
+    color: var(--rm-cyan);
+    padding: 0 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 10px;
+    color: white !important;
+    padding: 12px 15px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--rm-cyan) !important;
+    background: rgba(0, 240, 255, 0.1) !important;
+    box-shadow: var(--cyan-glow);
+}
+
+
+input[type="checkbox"], input[type="radio"] {
+    accent-color: var(--rm-cyan);
+    transform: scale(1.3);
+    margin-right: 10px;
+}
+
+/* BUTOANE - MAXIMUM POWER */
+input[type="submit"], input[type="reset"] {
+    padding: 20px 40px;
+    border-radius: 50px;
+    border: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition);
+    margin: 10px;
+}
+
+input[type="submit"] {
+    background: linear-gradient(45deg, var(--rm-cyan), var(--rm-gold));
+    color: var(--rm-dark);
+    box-shadow: var(--cyan-glow);
+}
+
+input[type="submit"]:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 0 50px var(--rm-cyan);
+}
+
+input[type="reset"] {
+    background: transparent;
+    border: 2px solid #ff0055;
+    color: #ff0055;
+}
+
+input[type="reset"]:hover {
+    background: #ff0055;
+    color: white;
+}
+
+
+footer#subsol {
+    background: rgba(0,0,0,0.9);
+    padding: 80px 20px;
+    border-top: 4px solid var(--rm-cyan);
+}
+
+footer ul { list-style: none; }
+footer li { margin-bottom: 10px; position: relative; padding-left: 25px; }
+
+
+footer li::before {
+    content: "◈";
+    position: absolute;
+    left: 0;
+    color: var(--rm-cyan);
+    font-size: 1rem;
+
+}
+
+footer a { color: white; text-decoration: none; transition: 0.3s; }
+footer a:hover { color: var(--rm-gold); text-shadow: var(--gold-glow); }
+
+
+@keyframes levitate {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes shineSweep {
+    to { background-position: 300% center; }
+}

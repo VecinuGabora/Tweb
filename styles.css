@@ -1,0 +1,262 @@
+:root {
+
+    --rm-blue-deep: #001e4e;
+    --rm-blue-main: #00529F;
+    --rm-blue-light: #0073e6;
+    --rm-gold: #FEBE10;
+    --rm-gold-dark: #b38600;
+    --rm-white: #ffffff;
+    --rm-silver: #e0e0e0;
+    --rm-accent-purple: #4b0082;
+
+
+    --gold-glow: 0 0 25px rgba(254, 190, 16, 0.5);
+    --blue-glow: 0 15px 40px rgba(0, 82, 159, 0.4);
+    --glass: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+
+
+    --transition-hq: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    --anim-float: floating 5s ease-in-out infinite;
+    --anim-pulse: pulse 2s infinite;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: var(--rm-blue-deep);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--rm-white);
+    overflow-x: hidden;
+    line-height: 1.7;
+
+    /* Fundal Complex Upgraded - Cu Imagine de Fundal */
+    background-image:
+            radial-gradient(circle at 10% 20%, rgba(0, 82, 159, 0.5) 0%, transparent 50%),
+            radial-gradient(circle at 90% 80%, rgba(254, 190, 16, 0.2) 0%, transparent 50%),
+            url('https://www.transparenttextures.com/patterns/carbon-fibre.png'),
+            url('https://images.unsplash.com/photo-1554050857-c84a8abdb5e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); /* Imagine de fundal abstractă albastră pentru lux */
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+body::before {
+    content: "1902";
+    position: fixed;
+    bottom: -40px;
+    right: -30px;
+    font-family: 'Cinzel', serif;
+    font-size: 35rem;
+    color: rgba(255, 255, 255, 0.04);
+    z-index: -1;
+    font-weight: 900;
+}
+body::after {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg') no-repeat center;
+    background-size: 70%;
+    opacity: 0.04;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    pointer-events: none;
+}
+
+
+::-webkit-scrollbar { width: 14px; }
+::-webkit-scrollbar-track { background: var(--rm-blue-deep); border-radius: 10px; }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--rm-gold), var(--rm-gold-dark));
+    border-radius: 10px;
+    border: 3px solid var(--rm-blue-deep);
+}
+
+
+header#top {
+    background: linear-gradient(to bottom, rgba(0, 30, 78, 0.97), transparent);
+    padding: 50px 0;
+    animation: fadeInDown 1.2s ease-out;
+}
+header table {
+    max-width: 1300px;
+    margin: 0 auto;
+    border-spacing: 25px;
+}
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    letter-spacing: 5px;
+    text-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    background: linear-gradient(to right, #fff, var(--rm-gold), var(--rm-accent-purple), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s infinite linear;
+    background-size: 300% auto;
+}
+header p {
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    color: var(--rm-silver);
+}
+header b { color: var(--rm-gold); }
+header img {
+    filter: drop-shadow(0 0 20px rgba(254, 190, 16, 0.6));
+    animation: var(--anim-float);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.5s;
+}
+header img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+
+nav {
+    position: sticky;
+    top: 25px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    margin: 0 25px;
+}
+nav table {
+    background: rgba(0, 82, 159, 0.35) !important;
+    backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px !important;
+    padding: 12px 45px !important;
+    box-shadow: var(--blue-glow);
+}
+nav td { padding: 0 !important; }
+nav a {
+    color: var(--rm-white) !important;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 18px 28px;
+    display: block;
+    border-radius: 50px;
+    transition: var(--transition-hq);
+    letter-spacing: 1.5px;
+}
+nav a:hover {
+    background: linear-gradient(45deg, var(--rm-gold), var(--rm-gold-dark));
+    color: var(--rm-blue-deep) !important;
+    transform: translateY(-6px) scale(1.15);
+    box-shadow: var(--gold-glow);
+}
+
+
+main {
+    max-width: 1400px;
+    margin: 70px auto;
+    padding: 0 25px;
+}
+section {
+    position: relative;
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    padding: 70px;
+    margin-bottom: 90px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+    animation: fadeInUp 1.2s ease-out both;
+}
+
+#istoric-club {
+    background-image: url('https://images.unsplash.com/photo-1621888018691-6f18f2e5a4f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80'); /* Imagine istorică cu stadion vechi */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    position: relative;
+}
+#istoric-club::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 30, 78, 0.7);
+    border-radius: 50px;
+    z-index: -1;
+}
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    margin-bottom: 45px;
+    border-left: 10px solid var(--rm-gold);
+    padding-left: 30px;
+    text-shadow: 3px 3px 12px rgba(0,0,0,0.4);
+}
+
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-left: 20px;
+}
+p::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--rm-gold);
+    font-size: 1.5rem;
+}
+
+
+@keyframes floating {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(3deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-60px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shine {
+    to { background-position: 300% center; }
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(254, 190, 16, 0.5); }
+    70% { box-shadow: 0 0 0 20px rgba(254, 190, 16, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(254, 190, 16, 0); }
+}
+
+
+@media (max-width: 900px) {
+    header h1 { font-size: 2.5rem; }
+    nav table { border-radius: 25px !important; }
+    nav a { padding: 12px 18px; font-size: 0.7rem; }
+    section { padding: 40px; border-radius: 30px; }
+}
+
+
+::selection {
+    background: var(--rm-gold);
+    color: var(--rm-blue-deep);
+}
+section p:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}

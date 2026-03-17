@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Exo+2:wght@300;600;800&display=swap');
+
+:root {
+
+    --rm-space-dark: #020617;
+    --rm-neon-cyan: #00f0ff;
+    --rm-pure-gold: #ffcf00;
+    --rm-magenta: #ff0055;
+    --rm-white: #ffffff;
+
+
+    --neon-cyan-glow: 0 0 25px rgba(0, 240, 255, 0.6);
+    --glass: rgba(15, 23, 42, 0.6);
+    --glass-border: rgba(0, 240, 255, 0.3);
+
+    --transition-hq: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; cursor: default; }
+
+body {
+    background-color: var(--rm-space-dark);
+    font-family: 'Exo 2', sans-serif;
+    color: var(--rm-white);
+    overflow-x: hidden;
+
+
+    background-image:
+            radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.15) 0%, transparent 40%),
+            url('https://www.transparenttextures.com/patterns/cubes.png'),
+            url('https://upload.wikimedia.org/wikipedia/commons/1/1f/Estadio_Santiago_Bernab%C3%A9u_-_01.jpg');
+    background-blend-mode: color-dodge, overlay, normal;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+body::before {
+    content: "GALÁCTICOS";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    font-family: 'Cinzel', serif;
+    font-size: 25vw;
+    color: rgba(255, 255, 255, 0.02);
+    z-index: -1;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+
+header#top {
+    background: linear-gradient(to bottom, rgba(2, 6, 23, 0.95), transparent);
+    padding: 60px 0;
+}
+
+header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4.5rem;
+    background: linear-gradient(90deg, #fff, var(--rm-neon-cyan), var(--rm-pure-gold), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% auto;
+    animation: shineSweep 6s infinite linear;
+}
+
+header img {
+    filter: drop-shadow(var(--neon-cyan-glow));
+    animation: levitate 5s ease-in-out infinite;
+}
+
+
+nav table {
+    background: var(--glass) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 80px !important;
+    padding: 10px 30px !important;
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.15);
+}
+
+nav a {
+    color: #94a3b8 !important;
+    font-weight: 800;
+    padding: 18px 25px;
+    display: block;
+    text-decoration: none;
+    transition: var(--transition-hq);
+}
+
+nav a:hover {
+    background: linear-gradient(135deg, var(--rm-neon-cyan), var(--rm-pure-gold));
+    color: var(--rm-space-dark) !important;
+    transform: translateY(-5px) scale(1.1);
+    border-radius: 40px;
+}
+
+
+section {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 40px;
+    padding: 70px;
+    margin: 80px auto;
+    max-width: 1400px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    border-left: 8px solid var(--rm-neon-cyan);
+    padding-left: 25px;
+    margin-bottom: 40px;
+}
+
+
+td[bgcolor] {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px !important;
+    transition: var(--transition-hq);
+}
+
+td[bgcolor]:hover {
+    background: rgba(0, 240, 255, 0.1) !important;
+    transform: translateY(-10px);
+}
+
+h3 { color: var(--rm-pure-gold); font-size: 1.8rem; margin-bottom: 20px; }
+
+
+ul li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    list-style: none;
+}
+
+ul li::before {
+    content: "◈";
+    position: absolute;
+    left: 0;
+    color: var(--rm-neon-cyan);
+    font-size: 1.2rem;
+    /* FĂRĂ ANIMAȚIE, FĂRĂ GLOW */
+    text-shadow: none !important;
+    animation: none !important;
+    opacity: 1;
+}
+
+
+footer#subsol {
+    background: rgba(2, 6, 23, 0.9);
+    border-top: 2px solid var(--rm-neon-cyan);
+    padding: 60px 20px;
+}
+
+
+@keyframes levitate {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+@keyframes shineSweep {
+    to { background-position: 300% center; }
+}
