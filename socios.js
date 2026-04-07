@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", function(e){
 
-        e.preventDefault();
+        //e.preventDefault();
 
         const name = form.nume_complet.value.trim();
         const email = form.email_socio.value.trim();
